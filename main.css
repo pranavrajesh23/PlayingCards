@@ -1,0 +1,286 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap');
+
+body {
+    font-family: "Bricolage Grotesque", sans-serif;
+    color: whitesmoke;
+    margin: 0;
+    padding: 0;
+}
+
+/* ---------------- Top Bar ---------------- */
+#top {
+    height: 50px;
+    background-color: whitesmoke;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap; /* allow wrapping on small screens */
+    padding: 5px 10px;
+}
+
+#logodiv img {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+#logodiv h1 {
+    color: rgb(231, 8, 8);
+    font-size: 20px;
+}
+#logodiv{
+    display: flex;
+    gap:10px
+}
+#buttondiv {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#buttondiv button {
+    padding: 5px 12px;
+    border: none;
+    border-radius: 4px;
+    background: red;
+    cursor: pointer;
+    font-weight: bold;
+    color: whitesmoke;
+    font-size: 14px;
+}
+
+/* ---------------- Main Layout ---------------- */
+#whole {
+    width: 100%;
+    min-height: 100vh;
+    background-color: red;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Stock + Foundations */
+#foun {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+#getcard, .foundations {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+#pack, #rest, .foundation {
+    width: 80px;
+    height: 110px;
+    border: 1px solid whitesmoke;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#cards {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 80px;
+    padding: 10px;
+}
+
+.tableau {
+    position: relative;
+    width: 80px;
+    min-height: 300px;
+}
+
+
+.card {
+    width: 80px;
+    height: 100px;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    text-align: left;
+    line-height: normal;
+    font-size: 16px;
+    position: absolute;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-size: cover;
+    background-position: center;
+}
+
+.card .bottom {
+    align-self: flex-end;
+    transform: rotate(180deg);
+}
+.card .middle {
+    align-self: center;
+}
+
+/* ---------------- Status Elements ---------------- */
+#moveCounter, #scoreBoard {
+    font-size: 16px;
+    font-weight: bold;
+    color: red;
+    margin: 5px;
+}
+
+#timer {
+    background-color: red;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-weight: bold;
+    min-width: 70px;
+    text-align: center;
+    color: white;
+}
+
+/* ---------------- Win Banner ---------------- */
+#winBanner {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: green;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 16px;
+    opacity: 0;
+    display: none;
+    transition: opacity 0.5s ease-in-out;
+    z-index: 1000;
+}
+
+/* ---------------- Responsiveness ---------------- */
+
+/* Tablets */
+@media (max-width: 900px) {
+    #cards {
+        gap: 5px;
+    }
+
+    .tableau {
+        width: 70px;
+    }
+
+    .card {
+        width: 70px;
+        height: 90px;
+        font-size: 14px;
+    }
+
+    #pack, #rest, .foundation {
+        width: 70px;
+        height: 95px;
+    }
+
+    #logodiv h1 {
+        font-size: 18px;
+    }
+}
+
+/* Mobile */
+/* Mobile */
+@media (max-width: 600px) {
+    /* TOP HEADER SPLIT INTO TWO ROWS */
+    #top {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: auto;
+        /* padding: 8px; */
+        /* gap: 8px; */
+    }
+
+    /* Row 1: Logo + Name centered */
+    #logodiv {
+        justify-content: center;
+    }
+    #logodiv h1 {
+        font-size: 20px;
+    }
+    #logodiv img {
+        height: 40px;
+        width: 40px;
+    }
+
+    /* Row 2: Timer, Score, Moves, Buttons in one row */
+    #buttondiv {
+        display: flex;
+        flex-wrap: wrap; 
+        justify-content: center;
+        /* gap: 20px; */
+        font-size: 14px; 
+        padding-right: 15px;
+    }
+    #buttondiv button {
+        justify-content: center;
+        padding: 4px 10px;
+        font-size: 12px;
+    }
+    #timer, #scoreBoard, #moveCounter {
+        font-size: 14px;
+    }
+
+    /* PACK + REST centered */
+    #getcard {
+        width: 100%;
+        justify-content: center;
+        gap: 20px;
+        padding: 0;
+    }
+    #pack, #rest {
+        width: 70px;
+        height: 100px;
+    }
+
+    /* FOUNDATIONS centered with good gaps */
+    .foundations {
+        width: 100%;
+        justify-content: center;
+        gap: 20px;
+        padding: 10px 0;
+    }
+    .foundation {
+        width: 70px;
+        height: 100px;
+    }
+
+    /* TABLEAU styling */
+    #cards {
+        justify-content: center;
+        gap: 15px; /* add spacing between columns */
+        padding: 10px;
+        flex-wrap: wrap; /* allow wrap on very small screens */
+    }
+    .tableau {
+        /* justify-content: center; */
+        width: 65px;
+        height: 120px;
+        border: 1px solid white; /* border for clarity */
+        border-radius: 15px;
+        /* padding: 2px; */
+    }
+
+    /* CARDS smaller */
+    .card {
+        width: 55px;
+        height: 80px;
+        font-size: 12px;
+    }
+}
+

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="logo.png" type="image/png">
+    <title>PlayingCards</title>
+    <link rel="stylesheet" href="main.css">
+    
+</head>
+<body>
+    <div id="winBanner">🎉 You Won! 🎉</div>
+
+    <div id="whole">
+        <div id="top">
+            <div id="logodiv">
+                <img id="logo" src="logo.png" alt="Left Image">
+                <h1>Playing Cards</h1>
+            </div>
+
+            <div id="buttondiv">
+                <div>Time: <span id="timer">00:00</span></div>
+                <div id="scoreBoard">Score: 0</div>
+                <div id="moveCounter">Moves: 0</div>
+                <button id="undo">UNDO</button>
+                <button id="new">NEW GAME</button>
+            </div>
+        </div>
+        <div id="foun">
+            <div id="getcard">
+                <div id="pack"></div>
+                <div id="rest"></div>
+            </div>
+
+            <div class="foundations">
+                <div class="foundation" data-suit="♠"><p> &spades;</p></div>
+                <div class="foundation" data-suit="♥"><p>&hearts;</p></div>
+                <div class="foundation" data-suit="♦"><p> &diams;</p></div>
+                <div class="foundation" data-suit="♣"><p> &clubs;</p></div>
+                
+            </div>
+        </div>
+        <div id="cards">
+            <div class="tableau"></div>
+            <div class="tableau"></div>
+            <div class="tableau"></div>
+            <div class="tableau"></div>
+            <div class="tableau"></div>
+            <div class="tableau"></div>
+            <div class="tableau"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
